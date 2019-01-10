@@ -1,0 +1,131 @@
+package com.lnt.mvc.model;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+
+@Entity
+public class Employee {
+	
+	@Id
+	@Column(name="id")
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	
+private int employee_id;
+private String firstName;
+private String lastName;
+private String emailAddress;
+private double Salary;
+private String phoneNumber;
+private String password;
+private int jobId;
+private int department_id;
+
+private Date hiredate;
+
+
+public Employee() {
+	
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+public Employee(int employee_id, String firstName, String lastName, String emailAddress, double salary,
+		String phoneNumber, String password, int jobId, int department_id, Date hiredate) {
+	super();
+	this.employee_id = employee_id;
+	this.firstName = firstName;
+	this.lastName = lastName;
+	this.emailAddress = emailAddress;
+	Salary = salary;
+	this.phoneNumber = phoneNumber;
+	this.password = password;
+	this.jobId = jobId;
+	this.department_id = department_id;
+	this.hiredate = hiredate;
+}
+
+public int getEmployee_id() {
+	return employee_id;
+}
+
+public String getFirstName() {
+	return firstName;
+}
+
+public String getLastName() {
+	return lastName;
+}
+
+public String getEmailAddress() {
+	return emailAddress;
+}
+
+public double getSalary() {
+	return Salary;
+}
+
+public String getPhoneNumber() {
+	return phoneNumber;
+}
+
+public String getPassword() {
+	return password;
+}
+
+public int getJobId() {
+	return jobId;
+}
+
+public int getDepartment_id() {
+	return department_id;
+}
+
+public Date getHiredate() {
+	return hiredate;
+}
+
+public void setEmployee_id(int employee_id) {
+	this.employee_id = employee_id;
+}
+
+public void setFirstName(String firstName) {
+	this.firstName = firstName;
+}
+
+public void setLastName(String lastName) {
+	this.lastName = lastName;
+}
+
+public void setEmailAddress(String emailAddress) {
+	this.emailAddress = emailAddress;
+}
+
+public void setSalary(double salary) {
+	Salary = salary;
+}
+
+public void setPhoneNumber(String phoneNumber) {
+	this.phoneNumber = phoneNumber;
+}
+
+public void setPassword(String password) {
+	this.password = password;
+}
+
+public void setJobId(int jobId) {
+	this.jobId = jobId;
+}
+
+public void setDepartment_id(int department_id) {
+	this.department_id = department_id;
+}
+
+public void setHiredate(Date hiredate) {
+	this.hiredate = hiredate;
+}
+
+
+
+
+}

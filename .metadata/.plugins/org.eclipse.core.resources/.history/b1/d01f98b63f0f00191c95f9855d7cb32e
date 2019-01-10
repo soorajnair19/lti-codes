@@ -1,0 +1,22 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+   <class name = "Flight" table = "Flight">
+      
+      <meta attribute = "class-description">
+         This class contains the flight detail. 
+      </meta>
+      
+      <id name = "flightId" type = "int" column = "flightId">
+         <generator class="native"/>
+      </id>
+      
+      <property name = "fromSector" column = "fromSector" type = "string"/>
+      <property name = "toSector" column = "toSector" type = "string"/>
+      <property name = "capacity" column = "capacity" type = "int"/>
+      
+   </class>
+</hibernate-mapping>

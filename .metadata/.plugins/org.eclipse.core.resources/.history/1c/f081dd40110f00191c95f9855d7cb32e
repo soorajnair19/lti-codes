@@ -1,0 +1,27 @@
+package com.test.app;
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+import com.model.*;
+
+//import org.hibernate.cfg.AnnotationConfiguration;
+
+public class Tester {
+
+	public static void main(String [] args) {
+		
+		/*AnnotationConfiguration config = new AnnotationConfiguration();
+		config.configure().buildSessionFactory();
+		config.addAnnotatedClass(Customer.class);*/
+		
+		Customer c1 =  new Customer();
+		
+		SessionFactory factory = Hibernate.Util.getSessionFactory();
+		Session session = factory.openSession();
+		
+		
+		
+		
+	}
+}

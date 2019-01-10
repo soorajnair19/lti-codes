@@ -1,0 +1,51 @@
+package com.test.app;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.flight.Airline;
+import com.flight.Flight;
+
+import HibernateUtil.HibernateUtil;
+
+public class TestFlight {
+
+	public static void main(String[] args) {
+		
+
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+		
+		Transaction tx =  session.beginTransaction();
+		
+		Flight flight1 = new Flight();
+		flight1.setCapacity(400);
+		flight1.setFromSector("Mumbai");
+		flight1.setToSector("Delhi");
+		
+		session.save(flight1);
+		tx.commit();
+		
+		System.out.println("data saved bro");
+		session.close();
+		
+		SessionFactory factory1 = HibernateUtil.getSessionFactory();
+		Session session2 = factory1.openSession();
+		
+		Transaction tx2 =  session2.beginTransaction();
+		
+		Airline airline1 = new Airline();
+		airline1.setAirlineId(100);
+		airline1.setAirlineName("Indigo");
+		
+		
+		session2.save(airline1);
+		tx2.commit();
+		
+		System.out.println("data saved bro");
+		session2.close();
+		
+	}
+
+}

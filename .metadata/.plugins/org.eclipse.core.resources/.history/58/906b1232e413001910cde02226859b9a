@@ -1,0 +1,62 @@
+package com.lnt.mvc.service;
+
+import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lnt.mvc.dao.EmployeeDao;
+import com.lnt.mvc.model.Employee;
+
+public class EmployeeServiceImpl implements IEmployeeService{
+
+	private EmployeeDao empdao;
+	
+	@Override
+	@Transactional
+
+	public void createEmployeeDetails(Employee Employee) {
+		this.empdao.createEmployeeDetails(Employee);
+		
+	}
+
+	@Override
+	@Transactional
+
+	public void updateEmployeeDetails(Employee Employee) {
+		this.empdao.updateEmployeeDetails(Employee);
+		
+	}
+
+	@Override
+	@Transactional
+
+	public void deleteEmployeeDetails(int emp_id) {
+		this.empdao.deleteEmployeeDetails(emp_id);
+		
+	}
+
+	@Override
+	@Transactional
+
+	public List<Employee> getAllEmployeeDetails() {
+		
+		return this.empdao.getAllEmployeeDetails();
+	}
+
+	@Override
+	@Transactional
+
+	public Employee getEmployeeDetails(int Employee) {
+		
+		return this.empdao.getEmployeeDetails(Employee);
+	}
+
+	@Override
+	@Transactional
+
+	public List<Employee> getByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

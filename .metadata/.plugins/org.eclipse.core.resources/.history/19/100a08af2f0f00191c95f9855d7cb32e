@@ -1,0 +1,25 @@
+package com.hibernate.inheritance;
+
+public class Task {
+private String tname;
+
+public Task() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+
+public Task(String tname) {
+	super();
+	this.tname = tname;
+}
+
+public String getTname() {
+	return tname;
+}
+
+public void setTname(String tname) {
+	this.tname = tname;
+}
+
+
+}

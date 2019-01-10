@@ -1,0 +1,14 @@
+package com.lnt.mvc.service;
+
+import java.util.List;
+
+import com.lnt.mvc.model.Employee;
+
+public interface IEmployeeService {
+	public void createEmployeeDetails (Employee Employee);
+	public void updateEmployeeDetails (Employee Employee);
+	public void deleteEmployeeDetails(int emp_id);
+	public List <Employee> getAllEmployeeDetails();
+	public Employee  getEmployeeDetails (int Employee);
+	public List<Employee> getByName(String name);
+}

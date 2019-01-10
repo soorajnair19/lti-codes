@@ -1,0 +1,36 @@
+package com.test.app;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.model.*;
+import HibernateUtil.HibernateUtil;
+
+
+//import org.hibernate.cfg.AnnotationConfiguration;
+
+public class Tester {
+
+	public static void main(String [] args) {
+		
+		/*AnnotationConfiguration config = new AnnotationConfiguration();
+		config.configure().buildSessionFactory();
+		config.addAnnotatedClass(Customer.class);*/
+		
+		Customer c1 =  new Customer();
+		
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+		session.save(c1);
+		System.out.println("customer data saved");
+		tx.commit();
+		System.out.println("closing session");
+		session.close();
+		
+		
+	}
+}

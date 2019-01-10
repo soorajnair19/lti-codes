@@ -1,0 +1,38 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven Bundle Plugin
+Built-By: brmeyer
+Build-Jdk: 1.7.0_06
+Main-Class: org.hibernate.annotations.common.Version
+Implementation-Title: Hibernate Commons Annotations
+Implementation-URL: http://hibernate.org
+Implementation-Vendor: hibernate.org
+Implementation-Vendor-Id: hibernate.org
+Implementation-Version: 4.0.2.Final
+Bnd-LastModified: 1368211692471
+Bundle-Description: Common reflection code used in support of annotati
+ on processing
+Bundle-DocURL: http://hibernate.org
+Bundle-License: http://www.gnu.org/licenses/lgpl-2.1.html
+Bundle-ManifestVersion: 2
+Bundle-Name: Hibernate Commons Annotations
+Bundle-SymbolicName: org.hibernate.common.hibernate-commons-annotations
+Bundle-Vendor: Hibernate.org
+Bundle-Version: 4.0.2.Final
+Export-Package: org.hibernate.annotations.common.annotationfactory;ver
+ sion="4.0.2.Final",org.hibernate.annotations.common;uses:="org.hibern
+ ate.annotations.common.util.impl";version="4.0.2.Final",org.hibernate
+ .annotations.common.reflection;uses:="org.hibernate.annotations.commo
+ n.reflection.java.generics";version="4.0.2.Final",org.hibernate.annot
+ ations.common.reflection.java;uses:="org.hibernate.annotations.common
+ .reflection,org.hibernate.annotations.common.reflection.java.generics
+ ,org.hibernate.annotations.common,org.hibernate.annotations.common.ut
+ il";version="4.0.2.Final",org.hibernate.annotations.common.util;uses:
+ ="org.hibernate.annotations.common";version="4.0.2.Final",org.hiberna
+ te.annotations.common.util.impl;uses:="org.jboss.logging";version="4.
+ 0.2.Final",org.hibernate.annotations.common.reflection.java.generics;
+ version="4.0.2.Final"
+Import-Package: org.jboss.logging;version="[3.1,4)"
+Originally-Created-By: Apache Maven Bundle Plugin
+Tool: Bnd-1.50.0
+

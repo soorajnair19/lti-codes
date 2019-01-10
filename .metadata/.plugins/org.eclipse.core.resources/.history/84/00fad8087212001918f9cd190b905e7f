@@ -1,0 +1,11 @@
+package com.lti.pojos;
+
+public class Customer {
+private int id;
+private String name;
+private String email;
+private double creditallowed;
+
+
+
+}

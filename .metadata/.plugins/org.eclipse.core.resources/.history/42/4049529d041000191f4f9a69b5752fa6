@@ -1,0 +1,36 @@
+package com.hibernatedao.demo;
+
+import java.util.List;
+
+public class BidDAOImpl implements BidI{
+
+	@Override
+	public void addBid(Bidder b) {
+		
+		
+	}
+
+	@Override
+	public void delBid(Bidder b) {
+		
+		
+	}
+
+	@Override
+	public void updateBid(Bidder b) {
+	
+	}
+
+	@Override
+	public List<Bidder> listAllBidder() {
+	
+		return null;
+	}
+
+	@Override
+	public Bidder listBidderById(int bidid) {
+	
+		return null;
+	}
+
+}

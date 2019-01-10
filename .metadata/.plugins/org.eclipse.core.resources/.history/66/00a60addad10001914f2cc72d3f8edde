@@ -1,0 +1,13 @@
+package com.test.model;
+
+public class Department {
+private int depid;
+private String deptName;
+@Override
+public String toString() {
+	return "Department [depid=" + depid + ", deptName=" + deptName + "]";
+}
+
+
+
+}

@@ -1,0 +1,49 @@
+package com.test.app;
+
+import java.util.List;
+import java.util.Scanner;
+
+import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.hibernate.association.AccountEntity;
+import com.hibernate.association.EmployeeEntity;
+
+import HibernateUtil.HibernateUtil;
+
+public class TesterEmpAcc {
+public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+		
+		Transaction tx =  session.beginTransaction();
+		/*
+		 AccountEntity accEntity = new AccountEntity("343434");
+		EmployeeEntity empEntity = new EmployeeEntity("Heena","Rai");
+		empEntity.setAccount(accEntity);
+		
+		session.save(accEntity);
+		session.save(empEntity);
+		tx.commit();
+		
+		Query query = session.createQuery("from EmployeeEntity");
+		List <EmployeeEntity> emplist  = query.list();
+		for(EmployeeEntity e: emplist)
+		{
+			System.out.println(e);
+		}
+		*/
+		
+		EmployeeEntity e1 = new EmployeeEntity();
+		
+		
+		List <EmployeeEntity> emplist  = query.list();
+		
+		
+}
+}

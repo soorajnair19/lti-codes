@@ -1,0 +1,15 @@
+package java.com.dao;
+import java.com.model.Book;
+
+
+public interface IBookDao {
+public int addBook(Book b);
+public void updateBook(Book b);
+public void removeBook(Book b);
+public List <Book> listAllBooks();
+public Book getBookById();
+
+	
+	
+	
+}

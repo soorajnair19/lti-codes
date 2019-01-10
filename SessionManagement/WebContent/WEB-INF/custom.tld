@@ -1,0 +1,15 @@
+<taglib>
+<lib-version>1.0</lib-version>
+<jsp-version>2.0</jsp-version>
+
+<short-name> greet</short-name>
+
+<tag>
+
+<name>greet</name>
+<tag>com.lti.servlets.greetTag</tag>
+<body-content>scriptless</body-content>
+</tag>
+
+
+</taglib>

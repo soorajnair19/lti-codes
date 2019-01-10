@@ -1,0 +1,9 @@
+<ApplicationInsights xmlns="http://schemas.microsoft.com/ApplicationInsights/2013/Settings" schemaVersion="2014-05-30">
+    <SDKLogger type="FILE">
+        <Level>OFF</Level>
+        <UniquePrefix>ai-log</UniquePrefix>
+        <BaseFolder>AppInsights</BaseFolder>
+    </SDKLogger>
+    <InstrumentationKey>1dcd1cc8-615b-4193-99cb-02e9a71d9d10</InstrumentationKey>
+</ApplicationInsights>
+

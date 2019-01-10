@@ -1,0 +1,23 @@
+package com.lti.model;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping({"/customer"})
+public class CustomerController {
+	@RequestMapping({"/customer"})
+
+	@RequestMapping({"/add"})
+	public String add()
+	{
+		return "add";
+	}
+	
+	@RequestMapping({"/update"})
+	public String update()
+	{
+		return "update";
+	}
+	
+}

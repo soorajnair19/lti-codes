@@ -1,0 +1,68 @@
+package com.lti.dao;
+import java.util.List;
+import java.util.Scanner;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.model.*;
+
+public class TesterApp {
+
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		EmpDao empDao = (EmpDao) context.getBean("employeeDaoImpl");
+		
+		Employee e = context.getBean("employee", Employee.class);
+		e.setAge(32);
+		e.setName("John");
+		e.setSalary(25000);
+		empDao.create(e);
+		
+		Employee e1 = context.getBean("employee", Employee.class);
+		e.setAge(31);
+		e.setName("Walker");
+		e.setSalary(21000);
+		empDao.create(e1);
+		
+		Employee e2 = context.getBean("employee", Employee.class);
+		e.setAge(19);
+		e.setName("Smith");
+		e.setSalary(20000);
+		empDao.create(e2);
+		
+		System.out.println("Listing multiple records:");
+		List<Employee> employees = empDao.listEmployees();
+		for (Employee employee : employees)
+		{
+			System.out.println(employee);
+		}
+		
+		System.out.println("Enter employeeid to delete");
+		Scanner sc = new Scanner(System.in);
+		int empdel = sc.nextInt();
+		empDao.delete(empdel);
+		List<Employee> employees1 = empDao.listEmployees();
+		for (Employee employee : employees1)
+		{
+			System.out.println(employee);
+		}
+		
+		System.out.println("Enter employeeid to update");
+		Scanner sc1 = new Scanner(System.in);
+		int empup = sc1.nextInt();
+		System.out.println("Enter new age of the employee");
+		int empnewage=sc1.nextInt();
+		
+		empDao.update(empup,empnewage);
+		List<Employee> employees2 = empDao.listEmployees();
+		for (Employee employee : employees2)
+		{
+			System.out.println(employee);
+		}
+		
+		
+		
+	}
+
+}

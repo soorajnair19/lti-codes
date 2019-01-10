@@ -1,0 +1,89 @@
+package com.lnt.mvc.dao;
+
+import java.util.List;
+
+import javax.persistence.Query;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.lnt.mvc.model.Employee;
+import com.lnt.mvc.model.Person;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+	private static final Logger logger = 			
+			LoggerFactory.getLogger(PersonDaoImpl.class);
+
+	private SessionFactory sessionFactory;
+
+	@Override
+	public void createEmployeeDetails(Employee emp) {
+		Session session = this.sessionFactory.getCurrentSession();
+		session.save(emp);
+		logger.info("Employee details saved successfully");
+		
+	}
+
+	@Override
+	public void updateEmployeeDetails(Employee emp) {
+		Session session = this.sessionFactory.getCurrentSession();
+		session.update(emp);
+		logger.info("Employee updated successfully"+"Employee details="+emp);
+	}
+
+	@Override
+	public void deleteEmployeeDetails(int emp_id) {
+Session session = this.sessionFactory.getCurrentSession();
+Employee emp = (Employee)session.load(Employee.class, new Integer(emp_id));
+if(null!= emp)
+{
+	session.delete(emp);
+	}
+else
+{
+logger.error("Employee not deleted with id="+emp_id);	
+}
+logger.info("Employee deleted successfully, Employee details="+emp);
+	}
+
+	@Override
+	public List<Employee> getAllEmployeeDetails() {
+		Session session = this.sessionFactory.getCurrentSession();
+		@SuppressWarnings("unchecked")
+
+		List<Employee> elist = session.createQuery("from Employee").list();
+		for(Employee e: elist)
+		{
+			logger.info("Employee List: "+e);
+		}
+		
+		return elist;
+	}
+
+	@Override
+	public Employee getEmployeeDetails(int emp_id) {
+		Session session = this.sessionFactory.getCurrentSession();
+		Employee e = (Employee)session.load(Employee.class, new Integer(emp_id));
+		logger.info("Employee loaded successfully, Employee details=" +e);
+		
+		return e;
+	}
+
+	@Override
+	public List<Employee> getByName(String name) {
+		Session session = this.sessionFactory.getCurrentSession();
+		String hql = "from Employee e where e.firstName like :names";
+		Query query = session.createQuery(hql);
+		query.setParameter("names", name+"%");
+		List <Employee> emp = query.list();
+		return emp;
+	}
+
+
+	
+	
+	
+}

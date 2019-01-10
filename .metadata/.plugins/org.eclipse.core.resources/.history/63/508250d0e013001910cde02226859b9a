@@ -1,0 +1,17 @@
+package com.lnt.mvc.dao;
+
+import java.util.List;
+
+import com.lnt.mvc.model.Department;;
+
+public interface DepartmentDao {
+
+	public void createDepartmentDetails (Department department);
+	public void updateDepartmentDetails (Department department);
+	public void deleteDepartmentDetails(int emp_id);
+	public List <Department> getAllDepartmentDetails();
+	public Department getDepartmentDetails (int Employee);
+	public List<Department> getByName(String name);
+	
+	
+}

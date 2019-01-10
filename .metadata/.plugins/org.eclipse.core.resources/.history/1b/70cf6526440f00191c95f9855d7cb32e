@@ -1,0 +1,55 @@
+package com.test.app;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.flight.Airline;
+import com.flight.Flight;
+
+import HibernateUtil.HibernateUtil;
+
+public class TestFlight {
+
+	public static void main(String[] args) {
+		
+
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+		
+		Transaction tx =  session.beginTransaction();
+		
+		Flight flight1 = new Flight();
+		flight1.setCapacity(400);
+		flight1.setFromSector("Mumbai");
+		flight1.setToSector("Delhi");
+		
+		session.save(flight1);
+		
+		
+		System.out.println("data saved bro");
+
+	
+		Airline airline1 = new Airline("Indigo");
+		Airline airline2= new Airline("JetAirways");
+		
+				List <Airline> airlineList = new ArrayList<>();
+				airlineList.add(airline1);
+				airlineList.add(airline2);
+				
+				flight1.setAirlineList(airlineList);
+				session.save(flight1);
+		
+		
+		session.save(airline1);
+		tx.commit();
+		
+		System.out.println("data saved bro");
+		session.close();
+		
+	}
+
+}

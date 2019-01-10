@@ -1,0 +1,5 @@
+package com.lnt.mvc.service;
+
+public class DepartmentServiceImpl {
+
+}

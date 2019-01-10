@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class TestReader {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+Scanner sc= new Scanner(System.in);
+		
+		
+		
+		int choice=0;
+		while(choice!=6)
+		{
+		System.out.println("Actions CRUD");
+		System.out.println("1.Add Book");
+		System.out.println("2. Delete Book");
+		System.out.println("3. Update Book");
+		System.out.println("4. List All Books");
+		System.out.println("5. List Book by ID");
+		System.out.println("6. Exit");
+		
+		System.out.println("Choose CRUD to be performed:");
+	}
+		
+		
+		
+	}
+
+}

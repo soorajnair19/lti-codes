@@ -1,0 +1,49 @@
+package com.lnt.mvc.service;
+
+import java.util.List;
+
+import org.springframework.transaction.annotation.Transactional;
+
+import com.lnt.mvc.dao.DepartmentDao;
+import com.lnt.mvc.dao.EmployeeDao;
+import com.lnt.mvc.model.Department;
+
+public class DepartmentServiceImpl implements IDepartmentService{
+	private DepartmentDao depdao;
+	
+	@Override 	@Transactional
+	public void createDepartmentDetails(Department department) {
+		this.depdao.createDepartmentDetails(department);
+		
+	}
+
+	@Override 	@Transactional
+	public void updateDepartmentDetails(Department department) {
+		this.depdao.updateDepartmentDetails(department);
+		
+	}
+
+	@Override 	@Transactional
+	public void deleteDepartmentDetails(int dep_id) {
+		this.depdao.deleteDepartmentDetails(dep_id);
+		
+	}
+
+	@Override 	@Transactional
+	public List<Department> getAllDepartmentDetails() {
+		
+		return this.depdao.getAllDepartmentDetails();
+	}
+
+	@Override 	@Transactional
+	public Department getDepartmentDetails(int department) {
+		return this.depdao.getDepartmentDetails(department);
+	}
+
+	@Override 	@Transactional
+	public List<Department> getByName(String name) {
+		
+		return this.depdao.getByName(name);
+	}
+
+}

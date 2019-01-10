@@ -1,0 +1,106 @@
+package servlets;
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+
+import HibernateUtil.HibernateUtil;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.hibernate.Query;
+import org.hibernate.SQLQuery;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.hibernate.subs.Reader;
+import com.hibernate.subs.Subscription;
+
+/**
+ * Servlet implementation class Servlet2
+ */
+@WebServlet("/Servlet2")
+public class Servlet2 extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+	private SessionFactory factory = HibernateUtil.getSessionFactory();
+	Session session = factory.openSession();
+	Transaction tx;
+    public Servlet2() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	session=factory.openSession();
+	
+	Reader r1 = new Reader();
+	r1.setEmail("abc@gg");
+	r1.setFirstName("abc");
+	
+	Reader r2 = new Reader();
+	r2.setEmail("mno@gg");
+	r2.setFirstName("mno");
+	
+	Reader r3 = new Reader();
+	r3.setEmail("xyz@gg");
+	r3.setFirstName("xyz");
+	
+	Reader r4 = new Reader();
+	r4.setEmail("ggwp@gg");
+	r4.setFirstName("ggwp");
+	
+	Subscription sub1 = new Subscription();
+	sub1.setTitle("sub1");
+	
+	Subscription sub2 = new Subscription();
+	sub2.setTitle("sub2");
+	
+	Subscription sub3 = new Subscription();
+	sub3.setTitle("sub3");
+	
+	Subscription sub4 = new Subscription();
+	sub4.setTitle("sub4");
+	
+	r1.setSubscriptions(Arrays.asList(sub1,sub2,sub3));
+	r2.setSubscriptions(Arrays.asList(sub2,sub3));
+	r3.setSubscriptions(Arrays.asList(sub1,sub4));
+	r4.setSubscriptions(Arrays.asList(sub4,sub2,sub3));
+	
+	tx = session.beginTransaction();
+	session.save(r1);
+	session.save(r2);
+	session.save(r3);
+	session.save(r4);
+	tx.commit();
+	/*SQLQuery query = session.createSQLQuery("select"+"readerid,email,firstName,title from Reader r,Subscription s"+
+	"where r.readerid=s.readerid");*/
+	List rlist = query.list();
+	
+	request.setAttribute("readersub", rlist);
+	request.getRequestDispatcher("data.jsp").forward(request, response);
+	
+	
+	session.close();
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
+
+}

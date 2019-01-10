@@ -1,0 +1,5 @@
+package com.lnt.mvc.dao;
+
+public class DepartmentDaoImpl {
+
+}

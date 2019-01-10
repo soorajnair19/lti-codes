@@ -1,0 +1,35 @@
+package com.hibernatedao.demo;
+
+import java.util.Scanner;
+
+public class BidTester {
+
+	public static void main(String[] args) {
+		Bidder b = new Bidder();
+		
+		
+		
+Scanner sc= new Scanner(System.in);
+		
+		
+		
+		int choice=0;
+		while(choice!=6)
+		{
+		System.out.println("Actions CRUD");
+		System.out.println("1.Add Bid");
+		System.out.println("2. Delete Bid");
+		System.out.println("3. Update Bid");
+		System.out.println("4. List All Bids");
+		System.out.println("5. List Bid by ID");
+		System.out.println("6. Exit");
+		
+		System.out.println("Choose CRUD to be performed:");
+		
+		
+		
+		
+
+	}
+
+}

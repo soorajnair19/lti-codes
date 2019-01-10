@@ -1,0 +1,7 @@
+package com.test.model;
+
+public class Department {
+private int depid;
+private String deptName;
+	
+}

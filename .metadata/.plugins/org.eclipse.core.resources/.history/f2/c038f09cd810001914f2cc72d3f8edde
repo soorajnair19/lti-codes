@@ -1,0 +1,63 @@
+
+
+public class Employee {
+	private int id;
+	private String name;
+	private Address address;
+	private Department department;
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", address=" + address + ", department=" + department + "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public Department getDepartment() {
+		return department;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
+	public Employee(int id, String name, Address address, Department department) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.department = department;
+	}
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void init()
+	{
+		System.out.println("Employee Bean initialised");
+	}
+	
+	public void destroy()
+	{
+		System.out.println("Employee bean destroyed");
+	}
+	
+	
+	
+	
+	
+	
+}

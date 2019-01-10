@@ -1,0 +1,5 @@
+package com.hibernate.subs;
+
+public class Reader {
+
+}

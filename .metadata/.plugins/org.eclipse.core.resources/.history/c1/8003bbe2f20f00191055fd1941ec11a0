@@ -1,0 +1,32 @@
+package com.hibernate.subs;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Subscription {
+	@Id
+	@GeneratedValue
+	private int subscriptionid;
+	private String title;
+	
+	@ManyToMany(cascade=CascadeType.ALL, mappedBy="subscriptions")
+	
+	private List <Reader> readers;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

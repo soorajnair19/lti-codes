@@ -1,0 +1,17 @@
+package com.lnt.mvc.model;
+
+public class Employee {
+private int employee_id;
+private String firstName;
+private String lastName;
+private String emailAddress;
+private double Salary;
+private String phoneNumber;
+private String password;
+private int jobId;
+private int department_id;
+
+private Date hiredate;
+
+
+}

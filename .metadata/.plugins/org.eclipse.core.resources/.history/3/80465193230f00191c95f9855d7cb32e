@@ -1,0 +1,27 @@
+package com.test.app;
+
+import java.io.Serializable;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.model.School;
+
+import HibernateUtil.HibernateUtil;
+
+public class SchoolTester implements Serializable{
+
+	public static void main(String[] args) {
+		School school = new School("Pillais");
+		
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+		
+		Transaction tx = session.beginTransaction();
+		
+		session.save(school);
+
+	}
+
+}

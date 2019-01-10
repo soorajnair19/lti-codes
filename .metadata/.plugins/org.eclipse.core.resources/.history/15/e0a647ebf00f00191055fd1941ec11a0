@@ -1,0 +1,17 @@
+package com.hibernate.subs;
+
+import javax.annotation.Generated;
+
+@Entity
+public class Reader {
+	@Id
+	@GeneratedValue
+	private int readerid;
+	private String email;
+	private String firstName;
+	
+	@ManytoMany(cascade=CascadeType.ALL)
+	private List <Subscription> subscriptions;
+	
+	
+}

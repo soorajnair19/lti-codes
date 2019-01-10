@@ -1,0 +1,25 @@
+package com.lnt.mvc.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+
+import com.lnt.mvc.service.IEmployeeService;
+
+
+@Controller
+public class EmployeeController {
+	private IEmployeeService employeeService;
+
+	
+	@Autowired
+	@Qualifier(value = "employeeService")
+	public void setEmployeeService(IEmployeeService employeeService) {
+		this.employeeService = employeeService;
+	}
+
+	
+	
+	
+	
+}

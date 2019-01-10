@@ -1,0 +1,15 @@
+package com.test.app;
+import com.model.*;
+
+import org.hibernate.cfg.AnnotationConfiguration;
+
+public class Tester {
+
+	public static void main(String [] args) {
+		
+		AnnotationConfiguration config = new AnnotationConfiguration();
+		config.configure().buildSessionFactory();
+		config.addAnnotatedClass(Customer.class);
+		
+	}
+}

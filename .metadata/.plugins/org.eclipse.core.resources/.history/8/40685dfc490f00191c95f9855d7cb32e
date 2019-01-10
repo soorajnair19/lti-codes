@@ -1,0 +1,12 @@
+package com.hibernatedao.demo;
+
+public class Bidder {
+private int bidid;
+private String name;
+private double amount;
+private float quantity;
+
+
+	
+	
+}

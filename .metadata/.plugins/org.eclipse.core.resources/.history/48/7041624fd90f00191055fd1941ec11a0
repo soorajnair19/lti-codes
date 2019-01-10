@@ -1,0 +1,74 @@
+package com.hibernate.association;
+
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="Account")
+public class AccountEntity implements Serializable {
+
+	@Id
+	@Column(name="id" ,nullable=false, unique=true)
+	@GeneratedValue(generator="cs",strategy=GenerationType.SEQUENCE)
+
+	private int accountId;
+	
+	@Column(nullable=false,length=40)
+	private String accountNumber;
+	
+	@OneToOne(mappedBy="account")
+	private EmployeeEntity employee;
+
+	public AccountEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/*public AccountEntity(int accountId, String accountNumber, EmployeeEntity employee) {
+		super();
+		this.accountId = accountId;
+		this.accountNumber = accountNumber;
+		this.employee = employee;
+	}*/
+
+	public int getAccountId() {
+		return accountId;
+	}
+
+	public String getAccountNumber() {
+		return accountNumber;
+	}
+
+	public EmployeeEntity getEmployee() {
+		return employee;
+	}
+
+	public void setAccountId(int accountId) {
+		this.accountId = accountId;
+	}
+
+	public void setAccountNumber(String accountNumber) {
+		this.accountNumber = accountNumber;
+	}
+
+	public void setEmployee(EmployeeEntity employee) {
+		this.employee = employee;
+	}
+
+	@Override
+	public String toString() {
+		return "AccountEntity [accountId=" + accountId + ", accountNumber=" + accountNumber + ", employee=" + employee
+				+ "]";
+	}
+	
+	
+	
+	
+}

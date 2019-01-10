@@ -1,0 +1,80 @@
+package com.test.model;
+
+import java.io.Serializable;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Employee implements Serializable{
+	private int id;
+	private String name;
+	private Address address;
+	private String department;
+	private int raisedSalary;
+	
+	
+	
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", address=" + address + ", department=" + department + "]";
+	}
+	public int getId() {
+		return id;
+	}
+	public String getName() {
+		return name;
+	}
+	public Address getAddress() {
+		return address;
+	}
+	public String getDepartment() {
+		return department;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+	public void setDepartment(String string) {
+		this.department = string;
+	}
+	public Employee(int id, String name, Address address, String department) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.address = address;
+		this.department = department;
+	}
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	public void init()
+	{
+		System.out.println("Employee Bean initialised");
+	}
+	
+	public void destroy()
+	{
+		System.out.println("Employee bean destroyed");
+	}
+	public int getRaisedsalary(int i) {
+		// TODO Auto-generated method stub
+		throw new NumberFormatException();
+	}
+
+	public void setRaisedSalary(int raisedSalary) {
+		this.raisedSalary = raisedSalary;
+	}
+	
+//	public void setRaisedSalary(int sal) {this.setRaisedSalary = sal;}
+	
+	
+	
+	
+}

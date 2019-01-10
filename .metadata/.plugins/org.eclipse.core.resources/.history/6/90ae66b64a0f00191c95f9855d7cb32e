@@ -1,0 +1,8 @@
+package com.hibernatedao.demo;
+
+public interface BidI {
+public void addBid();
+public void delBid();
+public void updateBid();
+public void List();
+}

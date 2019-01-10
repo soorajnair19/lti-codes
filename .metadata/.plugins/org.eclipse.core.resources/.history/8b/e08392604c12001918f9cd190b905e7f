@@ -1,0 +1,42 @@
+package com.lti.dao;
+import java.util.List;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.lti.model.*;
+
+public class TesterApp {
+
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+		EmpDao empDao = (EmpDao) context.getBean("employeeDaoImpl");
+		
+		Employee e = context.getBean("employee", Employee.class);
+		e.setAge(32);
+		e.setName("John");
+		e.setSalary(25000);
+		empDao.create(e);
+		
+		Employee e1 = context.getBean("employee", Employee.class);
+		e.setAge(31);
+		e.setName("Walker");
+		e.setSalary(21000);
+		empDao.create(e1);
+		
+		Employee e2 = context.getBean("employee", Employee.class);
+		e.setAge(19);
+		e.setName("Smith");
+		e.setSalary(20000);
+		empDao.create(e2);
+		
+		System.out.println("Listing multiple records:");
+		List<Employee> employees = empDao.listEmployees();
+		for (Employee employee : employees)
+		{
+			System.out.println(employee);
+		}
+		
+	}
+
+}

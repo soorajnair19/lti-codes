@@ -1,0 +1,33 @@
+package com.test.app;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.hibernate.association.AccountEntity;
+import com.hibernate.association.EmployeeEntity;
+
+import HibernateUtil.HibernateUtil;
+
+public class TesterEmpAcc {
+public static void main(String[] args) {
+		
+
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+		
+		Transaction tx =  session.beginTransaction();
+		AccountEntity accEntity = new AccountEntity("343434");
+		EmployeeEntity empEntity = new EmployeeEntity("Heena","Rai");
+		empEntity.setAccount(accEntity);
+		
+		session.save(accEntity);
+		session.save(empEntity);
+		tx.commit();
+		
+		
+		
+		
+		
+}
+}

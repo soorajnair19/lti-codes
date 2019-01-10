@@ -1,0 +1,42 @@
+package com.model;
+
+import java.io.Serializable;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class School implements Serializable{
+	private int scid;
+	private String scname;
+	public School() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Id
+	public School(int scid, String scname) {
+		super();
+		this.scid = scid;
+		this.scname = scname;
+	}
+	public int getScid() {
+		return scid;
+	}
+	public String getScname() {
+		return scname;
+	}
+	public void setScid(int scid) {
+		this.scid = scid;
+	}
+	public void setScname(String scname) {
+		this.scname = scname;
+	}
+
+	@Override
+	public String toString() {
+		return "School [scid=" + scid + ", scname=" + scname + "]";
+	}
+	
+
+}

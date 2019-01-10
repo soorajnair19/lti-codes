@@ -1,0 +1,8 @@
+package com.test.model;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class EmpDAOImpl implements IEmpDAO{
+
+}

@@ -1,0 +1,5 @@
+GitRepositoriesView.GitDirectories=D\:\\repository\\project2\\.git;C\:\\repos\\project1\\.git;D\:\\repository\\project3\\.git;
+GitRepositoriesView.GitDirectories.relative=D\:\\repository\\project2\\.git;C\:\\repos\\project1\\.git;D\:\\repository\\project3\\.git;
+RepositorySearchDialogSearchPath=D\:\\repository\\project3
+core_autoIgnoreDerivedResources=false
+eclipse.preferences.version=1

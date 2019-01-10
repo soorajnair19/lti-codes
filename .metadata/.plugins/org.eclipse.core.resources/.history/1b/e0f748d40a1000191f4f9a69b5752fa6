@@ -1,0 +1,5 @@
+package java.com.dao;
+
+public interface IBookDao {
+
+}

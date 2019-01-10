@@ -1,0 +1,8 @@
+
+public class Customer {
+int id;
+String name;
+String address;
+int creditscore;
+int rewardpts;s
+}

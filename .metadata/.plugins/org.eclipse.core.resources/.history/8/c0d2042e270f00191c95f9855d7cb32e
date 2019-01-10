@@ -1,0 +1,9 @@
+package com.hibernate.inheritance;
+
+import java.util.Date;
+
+public class Project {
+private int pid;
+private String pname;
+private Date startdate;
+}

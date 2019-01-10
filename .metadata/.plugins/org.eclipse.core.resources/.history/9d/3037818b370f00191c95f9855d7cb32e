@@ -1,0 +1,64 @@
+package com.test.app;
+
+import java.time.LocalDate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+
+import com.hibernate.inheritance.Module;
+import com.hibernate.inheritance.Project;
+import com.hibernate.inheritance.Task;
+
+import HibernateUtil.HibernateUtil;
+
+public class InheritTest {
+
+	public static void main(String[] args) {
+		
+		SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+		
+		Transaction tx =  session.beginTransaction();
+		
+		
+		Project p1 = new Project();
+		p1.setPname("Banking");
+		p1.setPid(p1.getPid());
+		p1.setStartdate(LocalDate.of(2018,3,3));
+		int id = (int)session.save(p1);
+		Module m1=new Module();
+		m1.setMname("Withdrawal");
+		
+		Task t1 = new Task();
+		t1.setTname("ExceptionHandling");
+		
+		Project p2= new Project();
+		p2.setStartdate(LocalDate.of(2017,3,3));
+		p2.setPname("Ecommerce");
+		int idp2=(int)session.save(p2);
+		
+		Module m2 = new Module();
+		m2.setMname("Shoppingcart");
+		m2.setPid(idp2);
+		
+		session.save(m2);
+		
+		
+		Task t2 = new Task();
+		t2.setPid(p2.getPid());
+		t2.setMname(m2.getMname());
+		t2.setTname("documentation");
+		session.save(t2);
+		tx.commit();
+		
+	
+		session.save(p1);
+		session.save(m1);
+		session.save(t1);
+		tx.commit();
+		session.close();
+		
+	}
+
+}

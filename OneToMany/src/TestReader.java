@@ -1,0 +1,79 @@
+import java.awt.print.Book;
+import java.util.Scanner;
+
+import com.hibernatedao.demo.Bidder;
+
+public class TestReader {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+
+		
+Scanner sc= new Scanner(System.in);
+		
+		
+		
+		int choice=0;
+		while(choice!=6)
+		{
+		System.out.println("Actions CRUD");
+		System.out.println("1.Add Book");
+		System.out.println("2. Delete Book");
+		System.out.println("3. Update Book");
+		System.out.println("4. List All Books");
+		System.out.println("5. List Book by ID");
+		System.out.println("6. Exit");
+		
+		System.out.println("Choose CRUD to be performed:");
+	}
+		
+		choice=sc.nextInt();
+		switch(choice)
+		{
+		case 1: addBook(bid);
+		System.out.println("Enter bid to be added");
+		bid=sc.nextInt();
+		
+		
+		break;
+	
+		case 2: delBid(bid);
+		System.out.println("Enter bid to be deleted");
+		que3="delete from bidders where b_id=bid";
+		break;
+		
+		
+		case 3: updateBid(bid);
+		
+		break;
+		
+		
+		
+		case 4: listofbids = listAllBidder();
+		for(Bidder d:listofbids)
+		{
+			System.out.println(d);
+		}
+		break;
+		
+		case 5: bid= listBidderById(bid);
+		System.out.println("Enter department to view");
+		deptid=new Scanner(System.in).nextInt();
+		
+		bid = daoimpl.listDeptById(bid);
+		System.out.println(bid);
+		break;
+		
+		case 6: System.exit(0);
+		break;
+		
+		
+		
+		}
+		
+}
+		
+	}
+
+}

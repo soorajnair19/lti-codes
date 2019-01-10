@@ -1,0 +1,10 @@
+package com.test.app;
+
+import javax.persistence.Embeddable;
+
+@Embeddable
+public class SchoolDetails {
+private String address;
+private int	scount;
+private boolean ispublic;
+}

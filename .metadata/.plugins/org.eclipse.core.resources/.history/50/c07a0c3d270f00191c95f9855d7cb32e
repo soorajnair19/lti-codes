@@ -1,0 +1,10 @@
+package com.hibernate.inheritance;
+
+import java.time.LocalDate;
+
+
+public class Project {
+private int pid;
+private String pname;
+private LocalDate startdate;
+}

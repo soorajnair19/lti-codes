@@ -1,0 +1,64 @@
+package java.com.dao;
+
+import java.com.model.Book;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import HibernateUtil.*;
+
+
+public class BookDAO {
+ public static int addBook(Book b1)
+ {
+ Configuration config = new Configuration();
+ config.configure("hibernate.cfg.xml");
+ 
+ SessionFactory factory = HibernateUtil.getSessionFactory();
+	Session session = factory.openSession();
+      Transaction tr=session.beginTransaction();
+      
+       int idd =(int) session.save(b1);
+       tr.commit();
+       session.close();
+       return idd;
+ }
+ 
+ 
+ 
+ 
+ public List <Book> listAllBooks()
+ {
+	 SessionFactory factory = HibernateUtil.HgetSessionFactory();
+		Session session = factory.openSession();
+	      Transaction tr=session.beginTransaction();
+	 List <Book> books = session.createQuery("from Book").list();
+	 tr.commit();
+	 session.close();
+	 return books;
+	 
+ }
+ 
+ 
+ public Book getBookById(int id)
+ {
+	 SessionFactory factory = HibernateUtil.getSessionFactory();
+		Session session = factory.openSession();
+	      Transaction tr=session.beginTransaction();
+	 Book b = (Book) session.load(Book.class, id);
+
+	 tr.commit();
+	 session.close();
+	 return b;
+	 
+ }
+ 
+ 
+ 
+ 
+}
+
+    
+

@@ -1,0 +1,5 @@
+package com.hibernate.inheritance;
+
+public class Module {
+
+}

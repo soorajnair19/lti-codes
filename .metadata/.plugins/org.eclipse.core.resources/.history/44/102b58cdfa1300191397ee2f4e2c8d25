@@ -1,0 +1,15 @@
+package com.lnt.mvc.service;
+
+import java.util.List;
+
+import com.lnt.mvc.model.Department;
+
+public interface IDepartmentService {
+
+	public void createDepartmentDetails (Department department);
+	public void updateDepartmentDetails (Department department);
+	public void deleteDepartmentDetails(int dep_id);
+	public List <Department> getAllDepartmentDetails();
+	public Department getDepartmentDetails (int department);
+	public List<Department> getByName(String name);
+}

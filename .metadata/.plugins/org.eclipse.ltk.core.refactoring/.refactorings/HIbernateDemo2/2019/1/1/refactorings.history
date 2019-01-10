@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;HibernateUtil&apos; to &apos;Trial/src&apos;&#x0D;&#x0A;- Original project: &apos;HIbernateDemo2&apos;&#x0D;&#x0A;- Destination element: &apos;Trial/src&apos;&#x0D;&#x0A;- Original element: &apos;HIbernateDemo2/src/HibernateUtil&apos;" description="Copy package" destination="=Trial/src" element1="/src&lt;HibernateUtil" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1546602014378" version="1.0"/>
+</session>

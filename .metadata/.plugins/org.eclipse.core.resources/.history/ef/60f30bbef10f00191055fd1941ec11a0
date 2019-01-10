@@ -1,0 +1,34 @@
+package com.hibernate.subs;
+
+import java.util.List;
+
+import javax.annotation.Generated;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Reader {
+	@Id
+	@GeneratedValue
+	private int readerid;
+	private String email;
+	private String firstName;
+	
+	@ManyToMany(cascade=CascadeType.ALL)
+	@JoinTable(name="Reader_Sub", 
+	joinColumns= {@JoinColumn(name="ReaderID", referencedColumnName="readerid")}, inverseJoinColumns= {
+			@JoinColumn(name="SubscriptionID" referencedColumnName="subscriptionId")
+	}
+			
+			
+			)
+	private List <Subscription> subscriptions;
+	
+	
+}

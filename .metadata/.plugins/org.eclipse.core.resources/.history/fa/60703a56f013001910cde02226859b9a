@@ -1,0 +1,45 @@
+package com.lnt.mvc.controller;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.lnt.mvc.exception.CustomException;
+import com.lnt.mvc.service.IEmployeeService;
+
+
+@Controller
+public class EmployeeController {
+	private IEmployeeService employeeService;
+
+	
+	@Autowired
+	@Qualifier(value = "employeeService")
+	public void setEmployeeService(IEmployeeService employeeService) {
+		this.employeeService = employeeService;
+	}
+
+	@ExceptionHandler(CustomException.class)
+	public ModelAndView handleEmployeeNotFoundException(CustomException ex) {
+		Map<String, CustomException> model = new HashMap<String, CustomException>();
+		model.put("exception", ex);
+		return new ModelAndView("error", model);
+
+	}
+
+	@ExceptionHandler(Exception.class)
+	public ModelAndView handleException(Exception ex) {
+		Map<String, Exception> model = new HashMap<String, Exception>();
+		model.put("exception", ex);
+		return new ModelAndView("error", model);
+
+	}
+	
+	
+	
+}

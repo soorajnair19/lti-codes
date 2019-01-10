@@ -1,0 +1,46 @@
+package com.flight;
+
+public class Flight {
+private int flightid;
+private String fromSector;
+private String toSector;
+private int capacity;
+public Flight() {
+	super();
+	// TODO Auto-generated constructor stub
+}
+public Flight(String fromSector, String toSector, int capacity) {
+	super();
+	this.fromSector = fromSector;
+	this.toSector = toSector;
+	this.capacity = capacity;
+}
+public int getFlightid() {
+	return flightid;
+}
+public String getFromSector() {
+	return fromSector;
+}
+public String getToSector() {
+	return toSector;
+}
+public int getCapacity() {
+	return capacity;
+}
+public void setFlightid(int flightid) {
+	this.flightid = flightid;
+}
+public void setFromSector(String fromSector) {
+	this.fromSector = fromSector;
+}
+public void setToSector(String toSector) {
+	this.toSector = toSector;
+}
+public void setCapacity(int capacity) {
+	this.capacity = capacity;
+}
+
+
+
+
+}
